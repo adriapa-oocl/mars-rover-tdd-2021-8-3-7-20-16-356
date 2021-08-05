@@ -7,20 +7,23 @@ public class MarsRover {
         this.roverStatus = roverStatus;
     }
 
-    public void executeCommand(String command) {
-        if (command.equals("M")){
-            move();
-        }
-        if (command.equals("L")){
-            turnLeft();
-        }
-        if (command.equals("R")){
-            turnRight();
-        }
+    public void executeCommands(String commands) {
+        executeCommand(commands);
     }
 
-    public void executeCommands(String commands) {
-
+    private void executeCommand(String commands) {
+        String[] command = commands.split("");
+        for (int i = 0; i < command.length; i++) {
+            if (command[i].equals("M")){
+                move();
+            }
+            if (command[i].equals("L")){
+                turnLeft();
+            }
+            if (command[i].equals("R")){
+                turnRight();
+            }
+        }
     }
 
     private void turnRight() {
@@ -77,7 +80,6 @@ public class MarsRover {
 
         roverStatus = new RoverStatus(locationX, locationY, direction);
     }
-
 
     public RoverStatus getRoverStatus() {
         return roverStatus;

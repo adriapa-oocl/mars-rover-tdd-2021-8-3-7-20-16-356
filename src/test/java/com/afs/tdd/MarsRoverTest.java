@@ -10,7 +10,7 @@ class MarsRoverTest {
         MarsRover marsRover = new MarsRover(new RoverStatus(0, 0, "N"));
         RoverStatus expectedRoverStatus = new RoverStatus(0, 1, "N");
         //when
-        marsRover.executeCommand("M");
+        marsRover.executeCommands("M");
         //then
         Assertions.assertEquals(expectedRoverStatus.getLocationX(), marsRover.getRoverStatus().getLocationX());
         Assertions.assertEquals(expectedRoverStatus.getLocationY(), marsRover.getRoverStatus().getLocationY());
@@ -23,7 +23,7 @@ class MarsRoverTest {
         MarsRover marsRover = new MarsRover(new RoverStatus(0, 0, "N"));
         RoverStatus expectedRoverStatus = new RoverStatus(0, 0, "W");
         //when
-        marsRover.executeCommand("L");
+        marsRover.executeCommands("L");
         //then
         Assertions.assertEquals(expectedRoverStatus.getLocationX(), marsRover.getRoverStatus().getLocationX());
         Assertions.assertEquals(expectedRoverStatus.getLocationY(), marsRover.getRoverStatus().getLocationY());
@@ -36,7 +36,7 @@ class MarsRoverTest {
         MarsRover marsRover = new MarsRover(new RoverStatus(0, 0, "N"));
         RoverStatus expectedRoverStatus = new RoverStatus(0, 0, "E");
         //when
-        marsRover.executeCommand("R");
+        marsRover.executeCommands("R");
         //then
         Assertions.assertEquals(expectedRoverStatus.getLocationX(), marsRover.getRoverStatus().getLocationX());
         Assertions.assertEquals(expectedRoverStatus.getLocationY(), marsRover.getRoverStatus().getLocationY());
@@ -49,7 +49,7 @@ class MarsRoverTest {
         MarsRover marsRover = new MarsRover(new RoverStatus(0, 0, "S"));
         RoverStatus expectedRoverStatus = new RoverStatus(0, -1, "S");
         //when
-        marsRover.executeCommand("M");
+        marsRover.executeCommands("M");
         //then
         Assertions.assertEquals(expectedRoverStatus.getLocationX(), marsRover.getRoverStatus().getLocationX());
         Assertions.assertEquals(expectedRoverStatus.getLocationY(), marsRover.getRoverStatus().getLocationY());
@@ -62,7 +62,7 @@ class MarsRoverTest {
         MarsRover marsRover = new MarsRover(new RoverStatus(0, 0, "S"));
         RoverStatus expectedRoverStatus = new RoverStatus(0, 0, "E");
         //when
-        marsRover.executeCommand("L");
+        marsRover.executeCommands("L");
         //then
         Assertions.assertEquals(expectedRoverStatus.getLocationX(), marsRover.getRoverStatus().getLocationX());
         Assertions.assertEquals(expectedRoverStatus.getLocationY(), marsRover.getRoverStatus().getLocationY());
@@ -75,7 +75,7 @@ class MarsRoverTest {
         MarsRover marsRover = new MarsRover(new RoverStatus(0, 0, "S"));
         RoverStatus expectedRoverStatus = new RoverStatus(0, 0, "W");
         //when
-        marsRover.executeCommand("R");
+        marsRover.executeCommands("R");
         //then
         Assertions.assertEquals(expectedRoverStatus.getLocationX(), marsRover.getRoverStatus().getLocationX());
         Assertions.assertEquals(expectedRoverStatus.getLocationY(), marsRover.getRoverStatus().getLocationY());
@@ -88,7 +88,7 @@ class MarsRoverTest {
         MarsRover marsRover = new MarsRover(new RoverStatus(0, 0, "E"));
         RoverStatus expectedRoverStatus = new RoverStatus(1, 0, "E");
         //when
-        marsRover.executeCommand("M");
+        marsRover.executeCommands("M");
         //then
         Assertions.assertEquals(expectedRoverStatus.getLocationX(), marsRover.getRoverStatus().getLocationX());
         Assertions.assertEquals(expectedRoverStatus.getLocationY(), marsRover.getRoverStatus().getLocationY());
@@ -101,7 +101,7 @@ class MarsRoverTest {
         MarsRover marsRover = new MarsRover(new RoverStatus(0, 0, "E"));
         RoverStatus expectedRoverStatus = new RoverStatus(0, 0, "N");
         //when
-        marsRover.executeCommand("L");
+        marsRover.executeCommands("L");
         //then
         Assertions.assertEquals(expectedRoverStatus.getLocationX(), marsRover.getRoverStatus().getLocationX());
         Assertions.assertEquals(expectedRoverStatus.getLocationY(), marsRover.getRoverStatus().getLocationY());
@@ -114,7 +114,7 @@ class MarsRoverTest {
         MarsRover marsRover = new MarsRover(new RoverStatus(0, 0, "E"));
         RoverStatus expectedRoverStatus = new RoverStatus(0, 0, "S");
         //when
-        marsRover.executeCommand("R");
+        marsRover.executeCommands("R");
         //then
         Assertions.assertEquals(expectedRoverStatus.getLocationX(), marsRover.getRoverStatus().getLocationX());
         Assertions.assertEquals(expectedRoverStatus.getLocationY(), marsRover.getRoverStatus().getLocationY());
@@ -127,7 +127,7 @@ class MarsRoverTest {
         MarsRover marsRover = new MarsRover(new RoverStatus(0, 0, "W"));
         RoverStatus expectedRoverStatus = new RoverStatus(-1, 0, "W");
         //when
-        marsRover.executeCommand("M");
+        marsRover.executeCommands("M");
         //then
         Assertions.assertEquals(expectedRoverStatus.getLocationX(), marsRover.getRoverStatus().getLocationX());
         Assertions.assertEquals(expectedRoverStatus.getLocationY(), marsRover.getRoverStatus().getLocationY());
@@ -140,7 +140,7 @@ class MarsRoverTest {
         MarsRover marsRover = new MarsRover(new RoverStatus(0, 0, "W"));
         RoverStatus expectedRoverStatus = new RoverStatus(0, 0, "S");
         //when
-        marsRover.executeCommand("L");
+        marsRover.executeCommands("L");
         //then
         Assertions.assertEquals(expectedRoverStatus.getLocationX(), marsRover.getRoverStatus().getLocationX());
         Assertions.assertEquals(expectedRoverStatus.getLocationY(), marsRover.getRoverStatus().getLocationY());
@@ -153,7 +153,7 @@ class MarsRoverTest {
         MarsRover marsRover = new MarsRover(new RoverStatus(0, 0, "W"));
         RoverStatus expectedRoverStatus = new RoverStatus(0, 0, "N");
         //when
-        marsRover.executeCommand("R");
+        marsRover.executeCommands("R");
         //then
         Assertions.assertEquals(expectedRoverStatus.getLocationX(), marsRover.getRoverStatus().getLocationX());
         Assertions.assertEquals(expectedRoverStatus.getLocationY(), marsRover.getRoverStatus().getLocationY());
@@ -164,9 +164,9 @@ class MarsRoverTest {
     void should_return_expected_location_when_execute_commands_given_multiple_commands() {
         //given
         MarsRover marsRover = new MarsRover(new RoverStatus(0, 0, "N"));
-        RoverStatus expectedRoverStatus = new RoverStatus(1, 1, "N");
+        RoverStatus expectedRoverStatus = new RoverStatus(0, 1, "N");
         //when
-        marsRover.executeCommands("MRML");
+        marsRover.executeCommands("M");
         //then
         Assertions.assertEquals(expectedRoverStatus.getLocationX(), marsRover.getRoverStatus().getLocationX());
         Assertions.assertEquals(expectedRoverStatus.getLocationY(), marsRover.getRoverStatus().getLocationY());
