@@ -164,13 +164,12 @@ class MarsRoverTest {
     void should_return_expected_location_when_execute_commands_given_multiple_commands() {
         //given
         MarsRover marsRover = new MarsRover(new RoverStatus(0, 0, "N"));
-        RoverStatus expectedRoverStatus = new RoverStatus(0, 1, "N");
+        RoverStatus expectedRoverStatus = new RoverStatus(1, 4, "N");
         //when
-        marsRover.executeCommands("M");
+        marsRover.executeCommands("MRMLMMM");
         //then
         Assertions.assertEquals(expectedRoverStatus.getLocationX(), marsRover.getRoverStatus().getLocationX());
         Assertions.assertEquals(expectedRoverStatus.getLocationY(), marsRover.getRoverStatus().getLocationY());
         Assertions.assertEquals(expectedRoverStatus.getDirection(), marsRover.getRoverStatus().getDirection());
     }
-
 }
