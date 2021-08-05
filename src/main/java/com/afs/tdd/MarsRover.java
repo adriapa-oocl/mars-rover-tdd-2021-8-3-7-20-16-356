@@ -19,6 +19,10 @@ public class MarsRover {
         }
     }
 
+    public void executeCommands(String commands) {
+
+    }
+
     private void turnRight() {
         final int locationX = roverStatus.getLocationX();
         final int locationY = roverStatus.getLocationY();
@@ -78,4 +82,5 @@ public class MarsRover {
     public RoverStatus getRoverStatus() {
         return roverStatus;
     }
+
 }
