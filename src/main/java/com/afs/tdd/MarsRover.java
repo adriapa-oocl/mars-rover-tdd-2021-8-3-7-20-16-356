@@ -7,16 +7,13 @@ public class MarsRover {
         this.roverStatus = roverStatus;
     }
 
-
     public void executeCommand(String command) {
         if (command.equals("M")){
             move();
         }
-
         if (command.equals("L")){
             turnLeft();
         }
-
         if (command.equals("R")){
             turnRight();
         }
@@ -34,6 +31,8 @@ public class MarsRover {
             newDirection = "W";
         }else if (direction.equals("E")){
             newDirection = "S";
+        }else if (direction.equals("W")){
+            newDirection = "N";
         }
 
         roverStatus = new RoverStatus(locationX, locationY, newDirection);
