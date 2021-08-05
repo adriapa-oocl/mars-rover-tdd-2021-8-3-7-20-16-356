@@ -8,21 +8,19 @@ public class MarsRover {
     }
 
     public void executeCommands(String commands) {
-        executeCommand(commands);
+        for (Character command : commands.toCharArray())
+        executeCommand(command);
     }
 
-    private void executeCommand(String commands) {
-        String[] command = commands.split("");
-        for (int i = 0; i < command.length; i++) {
-            if (command[i].equals("M")){
-                move();
-            }
-            if (command[i].equals("L")){
-                turnLeft();
-            }
-            if (command[i].equals("R")){
-                turnRight();
-            }
+    private void executeCommand(Character command) {
+        if (command.equals('M')){
+            move();
+        }
+        if (command.equals('L')){
+            turnLeft();
+        }
+        if (command.equals('R')){
+            turnRight();
         }
     }
 
